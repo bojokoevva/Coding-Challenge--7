@@ -115,3 +115,22 @@ let budget = createBudgetTracker();
 budget(300); // Expected output: "Current Balance: -$300"
 budget(200); // Expected output: "Current Balance: -$500"
 
+
+// Task 8 - Business Growth Projection (Recursive Function)
+
+function calculateGrowth(years, revenue) {
+    if (years >= 10) {
+        console.log(`Projected Revenue: $${revenue.toFixed(2)}`); // Log final revenue
+        return;
+    }
+
+    revenue *= 1.05; // Increase revenue by 5%
+    calculateGrowth(years + 1, revenue); // Recursive call with incremented year
+}
+
+// Test cases
+calculateGrowth(8, 1000); // Expected output: "Projected Revenue: $1102.50"
+calculateGrowth(5, 5000); // Expected output: "Projected Revenue: $6381.41"
+
+
+
